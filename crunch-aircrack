@@ -1,0 +1,10 @@
+# This is a very basic oneliner many people know about.
+# It pipes crunch calculations to aircrack to get the password of the capture file.
+
+# I know there are tons of better solutions, but I don't have a powerful GPU. (RX550 @ 2GiB)
+# So after benchmarking, using my proc was the best solution.
+
+# To keep things simple for myself (I am a n00b) I create the following filename from airodump
+# ESSID-DeviceName-BSSID-xx_xx_xx_xx_xx_xx.cap
+
+crunch 12 12 -f charset.lst mixalpha-numeric-all -d 2 | aircrack-ng -e [ESSID] -w - ESSID-routername-BSSID-xx_xx_xx_xx_xx_xx.cap
